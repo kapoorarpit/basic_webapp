@@ -20,3 +20,6 @@ class choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+    
+    def vote(self):
+        return self.votes
