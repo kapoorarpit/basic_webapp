@@ -6,12 +6,8 @@ from django.urls import path
 
 app_name= 'polls'
 urlpatterns = [
-    # ex: /polls/
-    path('', views.index, name='index'),
-    # ex: /5/
-    path('<int:question_id>/', views.detail, name='detail'),
-    # ex: /5/results/
-    path('<int:question_id>/results/', views.results, name='results'),
-    # ex: /5/vote/
+    path('', views.index.as_view(), name='index'),
+    path('<int:pk>/', views.detail.as_view(), name='detail'),
+    path('<int:pk>/results/', views.results.as_view(), name='results'),
     path('<int:question_id>/vote/', views.vote, name='vote'),
 ]
